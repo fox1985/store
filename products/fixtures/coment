@@ -1,0 +1,5 @@
+python manage.py loaddata products/fixtures/categoryes.json
+
+python manage.py loaddata products/fixtures/goods.json
+
+-------------------------------------------------------------------

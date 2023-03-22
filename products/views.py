@@ -10,14 +10,14 @@ def index(request):
     return  render(request, 'products/index.html', context)
 
 def products(request, category_id=None):
-    context = {
-        'title': 'Stor - Каталог','categorys': ProductCategory.objects.all()}
+    # фильтрация по категориям
+    products = Product.objects.filter(category_id=category_id) if category_id else Product.objects.all()
 
-    if category_id:
-        """Выбор категории"""
-        context.update({'products': Product.objects.filter(category_id=category_id)})
-    else:
-        context.update({'products': Product.objects.all()})
+    context = {
+        'title': 'Stor - Каталог',
+        'categorys': ProductCategory.objects.all(),
+        'products' :products
+    }
 
     return  render(request, 'products/products.html', context)
 

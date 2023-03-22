@@ -13,6 +13,8 @@ urlpatterns = [
 
     path('category/<int:category_id>/',products, name='category'),# фильтрация по категориям
 
+    path('page/<int:page_number>/',products, name='paginator'),
+
     path('basket-add/<int:product_id>/', basket_add, name='basket_add'),
     path('basket-delete/<int:id>/', basket_delete, name='basket_delete'),
 ]

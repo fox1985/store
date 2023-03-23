@@ -3,6 +3,10 @@ from products.models import ProductCategory, Product, Basket
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import  Paginator
 
+
+#тест ветки
+
+
 def index(request):
     context = {
         'title': 'Stor'
